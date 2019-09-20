@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export const AuthState = {
   isLoggedIn: false,
@@ -8,15 +8,29 @@ export const AuthState = {
 export const AuthContext = React.createContext();
 
 export const AuthProvider = (props) => {
-  return (
-    <AuthContext.Provider value={{
-      ...AuthState, authenticate: (user) => {
-        console.log('Login', user);
-      },
-      logout: () => {
-        console.log('Logout');
+  const [auth, setAuth] = useState(AuthState);
+
+  const authenticate = (userType) => {
+    setAuth({
+      isLoggedIn: true,
+      user: {
+        name: userType.charAt(0).toUpperCase() + userType.substring(1),
+        type: userType
       }
-    }}>
+    });
+    console.log('Login', userType, auth);
+  };
+
+  const logout = () => {
+    console.log('Logout');
+    setAuth({
+      isLoggedIn: false,
+      user: {}
+    });
+  };
+
+  return (
+    <AuthContext.Provider value={{ auth, authenticate, logout }}>
       {props.children}
     </AuthContext.Provider>
   );
