@@ -13,6 +13,7 @@ export default function Nav() {
         <li><Link to="/errors">Route doesn't exist</Link></li>
       </ul>
       <ul>
+        <li><Link to="/profile">Profile</Link></li>
         <li><Link to="/login">Login</Link></li>
       </ul>
     </nav>
