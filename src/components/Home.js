@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AuthContext } from '../providers/AuthProvider';
 
 export default function Home() {
+  const context = useContext(AuthContext);
+  console.log(context);
+
   return (
     <div>
       <h1>Home</h1>
+      <p>{context.isLoggedIn.toString()}</p>
     </div>
   );
 };

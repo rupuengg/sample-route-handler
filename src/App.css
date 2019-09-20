@@ -42,6 +42,7 @@ main {
   width: 400px;
   margin: 0px auto;
   display: block;
+  margin-top: 20px;
 }
 
 .login {
