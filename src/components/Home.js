@@ -3,7 +3,6 @@ import { AuthContext } from '../providers/AuthProvider';
 
 export default function Home() {
   const context = useContext(AuthContext);
-  console.log(context);
 
   return (
     <div>

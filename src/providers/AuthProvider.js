@@ -18,11 +18,9 @@ export const AuthProvider = (props) => {
         type: userType
       }
     });
-    console.log('Login', userType, auth);
   };
 
   const logout = () => {
-    console.log('Logout');
     setAuth({
       isLoggedIn: false,
       user: {}

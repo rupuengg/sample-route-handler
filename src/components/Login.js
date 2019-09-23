@@ -3,7 +3,6 @@ import { AuthContext } from '../providers/AuthProvider';
 
 export default function Login(props) {
   const context = useContext(AuthContext);
-  console.log(context, props);
 
   const handleLogin = (userType) => {
     context.authenticate(userType);

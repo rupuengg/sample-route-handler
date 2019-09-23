@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 export default function Nav(props) {
   const context = useContext(AuthContext);
-  console.log('Nav', context, props);
 
   const handleLogout = (e) => {
     e.preventDefault();
